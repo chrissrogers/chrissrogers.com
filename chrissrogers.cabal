@@ -1,0 +1,23 @@
+name:           chrissrogers
+version:        0.0.1
+synopsis:       Personal website
+homepage:       https://github.com/chrissrogers/chrissrogers.com
+license:        Private
+author:         Christopher Rogers
+maintainer:     chrissrogers@gmail.com
+category:       Web
+build-type:     Simple
+cabal-version:  >=1.10
+
+executable chrissrogers
+  main-is:      Main.hs
+  -- other-modules:       
+  build-depends:  base >= 4.6.0.1 && < 5
+                , resourcet
+                , scotty >= 0.6.2
+                , blaze-html
+                , heroku
+                , wai-middleware-static >= 0.4.0.2
+                , wai-extra
+                , time
+                , monad-logger
