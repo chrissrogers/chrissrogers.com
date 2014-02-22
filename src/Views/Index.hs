@@ -18,5 +18,5 @@ render = docTypeHtml $ do
         header $ do
           img ! src "/icon.png" ! A.title "christopher rogers"
         ul $ do
-          li $ do a ! href "https://github.com/chrissrogers" $ do "github"
-          li $ do a ! href "https://twitter.com/sircrog" $ do "twitter"
+          li $ a ! href "https://github.com/chrissrogers" $ "github"
+          li $ a ! href "https://twitter.com/sircrog" $ "twitter"
