@@ -2,7 +2,7 @@ name:           chrissrogers
 version:        0.0.1
 synopsis:       Personal website
 homepage:       https://github.com/chrissrogers/chrissrogers.com
-license:        Private
+license:        AllRightsReserved
 author:         Christopher Rogers
 maintainer:     chrissrogers@gmail.com
 category:       Web
@@ -10,14 +10,13 @@ build-type:     Simple
 cabal-version:  >= 1.18.0.2
 
 executable chrissrogers
-  main-is:      Main.hs
-  -- other-modules:       
-  build-depends:  base < 5
-                , resourcet
-                , scotty >= 0.6.2
-                , blaze-html
-                , heroku
-                , wai-middleware-static
-                , wai-extra
-                , time
-                , monad-logger
+  default-language: Haskell2010
+  hs-source-dirs:   src
+  main-is:          Main.hs
+  build-depends:
+    base < 5,
+    resourcet,
+    scotty >= 0.6.2,
+    wai-middleware-static,
+    wai-extra,
+    blaze-html
