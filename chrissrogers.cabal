@@ -17,6 +17,7 @@ executable chrissrogers
     base < 5,
     resourcet,
     scotty >= 0.6.2,
+    wai,
     wai-middleware-static,
     wai-extra,
     blaze-html

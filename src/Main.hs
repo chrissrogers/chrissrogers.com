@@ -3,6 +3,7 @@
 import System.Environment
 import Control.Monad
 import Web.Scotty
+import Network.Wai
 import Network.Wai.Middleware.RequestLogger
 import Network.Wai.Middleware.Static
 import Text.Blaze.Html.Renderer.Text
@@ -14,13 +15,13 @@ main = do
   port <- liftM read $ getEnv "PORT"
   scotty port $ do
     middleware logStdoutDev
-    middleware $ staticPolicy (noDots >-> addBase "public")
+    middleware public
 
-    get "/" $ do
-      blaze Index.render
-
-    notFound $ do
-      text "not found"
+    get "/" $ blaze Index.render
+    notFound $ text "not found"
 
 blaze :: Html -> ActionM ()
 blaze = html . renderHtml
+
+public :: Middleware
+public = staticPolicy $ noDots >-> addBase "public"

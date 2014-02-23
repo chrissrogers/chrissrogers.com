@@ -24,8 +24,7 @@ render = docTypeHtml $ do
           listLink "https://twitter.com/sircrog" "twitter"
 
 js :: AttributeValue -> Html
-js loc = H.script ! src loc $ do
-  ""
+js loc = H.script ! src loc $ ""
 
 css :: AttributeValue -> Html
 css loc = link ! rel "stylesheet" ! A.type_ "text/css" ! A.href loc
