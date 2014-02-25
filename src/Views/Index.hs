@@ -13,15 +13,15 @@ render = docTypeHtml $ do
     H.head $ do
       H.title "chrissrogers.com"
       css "style.css"
-      js "https://cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"
-      js "script.js"
+      js "https://rawgithub.com/mrdoob/three.js/master/build/three.js"
     body $ do
       section $ do
         header $ do
           img ! src "/icon.png" ! A.title "christopher rogers"
         ul $ do
-          listLink "https://github.com/chrissrogers" "github"
-          listLink "https://twitter.com/sircrog" "twitter"
+          listLink "github" "https://github.com/chrissrogers"
+          listLink "twitter" "https://twitter.com/sircrog"
+    js "script.js"
 
 js :: AttributeValue -> Html
 js loc = H.script ! src loc $ ""
@@ -29,5 +29,5 @@ js loc = H.script ! src loc $ ""
 css :: AttributeValue -> Html
 css loc = link ! rel "stylesheet" ! A.type_ "text/css" ! A.href loc
 
-listLink :: AttributeValue -> Markup -> Html
-listLink loc txt = li $ a ! href loc $ txt
+listLink :: Markup -> AttributeValue -> Html
+listLink txt loc = li $ a ! href loc $ txt
