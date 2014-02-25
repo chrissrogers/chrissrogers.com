@@ -4,16 +4,15 @@
     this.scene = new THREE.Scene;
     this.scene.add(new Pyramid);
 
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.z = 10;
-    this.camera.position.y = 1;
-
     this.renderer = new THREE.WebGLRenderer({ alpha: true });
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+
+    this.aspect = this.aspect.bind(this);
+    this.aspect();
+    window.addEventListener('resize', this.aspect);
 
     this.place();
 
-    this.render = this.render.bind(this)
+    this.render = this.render.bind(this);
     this.render();
   }
 
@@ -24,6 +23,14 @@
   World.prototype.render = function render () {
     requestAnimationFrame(this.render);
     this.renderer.render(this.scene, this.camera);
+  };
+
+  World.prototype.aspect = function () {
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    this.camera.position.z = 10;
+    this.camera.position.y = 1;
+
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
   };
 
   function Pyramid () {
