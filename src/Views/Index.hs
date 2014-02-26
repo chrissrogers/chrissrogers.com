@@ -13,7 +13,7 @@ render = docTypeHtml $ do
     H.head $ do
       H.title "chrissrogers.com"
       css "style.css"
-      js "https://rawgithub.com/mrdoob/three.js/master/build/three.js"
+      js "//cdnjs.cloudflare.com/ajax/libs/three.js/r66/three.min.js"
     body $ do
       section $ do
         header $ do
