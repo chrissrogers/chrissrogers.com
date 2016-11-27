@@ -20,8 +20,8 @@ render = docTypeHtml $ do
           img ! src "/icon.png" ! A.title "christopher rogers"
         ul $ do
           listLink "github" "https://github.com/chrissrogers"
-          listLink "twitter" "https://twitter.com/sircrog"
-          listLink "public key" "https://pgp.mit.edu/pks/lookup?op=vindex&search=0xE0016F76A360F4E2"
+          listLink "instagram" "https://instagram.com/sircrog"
+          listLink "pgp" "https://pgp.mit.edu/pks/lookup?op=vindex&search=0xE0016F76A360F4E2"
     js "script.js"
 
 js :: AttributeValue -> Html
