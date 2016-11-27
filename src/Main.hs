@@ -7,7 +7,7 @@ import Network.Wai
 import Network.Wai.Middleware.RequestLogger
 import Network.Wai.Middleware.Static
 import Text.Blaze.Html.Renderer.Text
-import Text.Blaze.Html
+import Text.Blaze.Html hiding (text)
 import qualified Views.Index as Index
 
 main :: IO ()
