@@ -11,13 +11,13 @@ render :: Html
 render = docTypeHtml $ do
   html $ do
     H.head $ do
-      H.title "chrissrogers.com"
+      H.title "Christopher Rogers"
       css "style.css"
       js "//cdnjs.cloudflare.com/ajax/libs/three.js/r66/three.min.js"
     body $ do
       section $ do
         header $ do
-          img ! src "/icon.png" ! A.title "christopher rogers"
+          img ! src "/icon.png" ! A.title "Christopher Rogers"
         ul $ do
           listLink "github" "https://github.com/chrissrogers"
           listLink "instagram" "https://instagram.com/sircrog"
