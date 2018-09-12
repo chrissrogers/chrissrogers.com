@@ -1,28 +1,23 @@
 body {
-  background: #9bae9f;
+  background: black no-repeat center center fixed url('/photos/1W1C0069.jpg');
+  background-size: cover;
   font: 14px Consolas, monaco, monospace;
   color: white;
   letter-spacing: 0.05em;
   margin: 0;
 }
 
-canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
 section {
   margin: 0 auto;
   width: 142px;
+  position: relative;
+  left: -100px;
 }
 
 header {
-  margin: 60px 0 40px;
+  margin: 60px 0;
   display: inline-block;
+  float: left;
 }
 
 a {
@@ -30,10 +25,19 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 ul {
   padding: 0;
+  width: 400px;
+  position: absolute;
+  left: 156px;
+  top: 100px;
 }
 
 li {
-  margin: 10px 0;
+  margin: 0 20px;
+  float: left;
 }
