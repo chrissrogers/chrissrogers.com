@@ -21,6 +21,6 @@ jobs:
     - id: upload
       uses: google-github-actions/upload-cloud-storage@v1
       with:
-        path: public
+        path: '${{ github.workspace }}/public'
         destination: chrissrogers-prod
-
+        parent: false
