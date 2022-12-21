@@ -18,6 +18,9 @@ jobs:
       with:
         credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
 
+    - id: reveal
+      run: ls -lsa ${{ github.workspace }}
+
     - id: upload
       uses: google-github-actions/upload-cloud-storage@v1
       with:
