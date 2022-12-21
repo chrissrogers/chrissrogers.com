@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+    - id: auth
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+
+    - id: upload
+      uses: google-github-actions/upload-cloud-storage@v1
+      with:
+        path: /public
+        destination: chrissrogers-prod
+
